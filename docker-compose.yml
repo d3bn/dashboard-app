@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  app:
+    volumes:
+      - .:/dashboard-app
+    ports:
+      - "8000:8000"
+    image: dashboard-app:latest
+    container_name: dashboard-app
+    command: npm start
+    tty: true
+networks:
+  common:
+    driver: bridge
